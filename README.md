@@ -1,11 +1,11 @@
-# Dogecoin <-> Ethereum bridge docs.
+# Dogecoin <-> Ethereum bridge docs
 
+The Dogecoin <-> Ethereum bridge is a system that allows Doges on the moved from the Dogecoin blockchain to the Ethereum blockchain and back.
 
-
-Main projects:
-* [Dogethereum contracts](https://github.com/dogethereum/dogethereum-contracts): Ethereum contracts for the bridge.
-* [Dogethereum agents](https://github.com/dogethereum/dogethereum-agents): External agents for the bridge.
-* [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools): CLI tools for the bridge.
+## Main subprojects
+* [Dogethereum contracts](https://github.com/dogethereum/dogethereum-contracts): Ethereum contracts.
+* [Dogethereum agents](https://github.com/dogethereum/dogethereum-agents): External agents.
+* [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools): CLI tools for Users and operators.
 * [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive): Interactive (i.e. challenge/response) validation of Scrypt hashes.
 
 ## Design
@@ -18,14 +18,6 @@ Main projects:
 
 ![Design](./design-eth2doge.png)
 
-## Incentives
-
-Some operations require gas to be spent or eth deposit to be frozen. Here are the incentives for doing that.
-
-* Submitting a Superblock: Superblock submitters will get a fee when the superblock they sent is used to relay a tx.
-* Being an operator: Each time a lock/unlock tx is made, operator gets a fee.
-* Sending dogecoin txs to DogeToken: Each user will send their own dogecoin lock tx to get doge tokens.
-* Superblock challenge: Challengers who find invalid superblocks will get some eth after the challenge/response game finishes.
 
 ## Actors
 
@@ -79,6 +71,15 @@ This is the list of external actors to the system and what they can do.
   * The [operator agent](https://github.com/dogethereum/dogethereum-agents) notices the unlock request. It creates, signs & broadcasts a doge unlock tx. 
   * The user receives the unlocked doges.
   * The operator waits the doge tx to be confirmed and included in a superblock and then relays the doge unlock tx to the eth network, so change can be used by [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) for future unlocks.
+
+## Incentives
+
+Some operations require gas to be spent or eth deposit to be frozen. Here are the incentives for doing that.
+
+* Submitting a Superblock: Superblock submitters will get a fee when the superblock they sent is used to relay a tx.
+* Being an operator: Each time a lock/unlock tx is made, operator gets a fee.
+* Sending dogecoin txs to DogeToken: Each user will send their own dogecoin lock tx to get doge tokens.
+* Superblock challenge: Challengers who find invalid superblocks will get some eth after the challenge/response game finishes.
 
 
 ## Assumptions
