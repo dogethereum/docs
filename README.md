@@ -8,13 +8,16 @@ The Dogecoin <-> Ethereum bridge is a system that allows Doges to be moved from 
 * [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools): CLI tools for Users and operators.
 * [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive): Interactive (i.e. challenge/response) validation of Scrypt hashes.
 
-## Design
-
-### Doge to Eth
+## Doge to Eth
 
 ![Design](./design.png)
 
-### Eth to Doge
+## Superblocks
+
+The Doge -> Eth side uses a new concept we named Superblocks. Read the [white paper](superblocks/superblocks-white-paper.pdf) 
+
+
+## Eth to Doge
 
 ![Design](./design-eth2doge.png)
 
