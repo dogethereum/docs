@@ -14,12 +14,23 @@ The Dogecoin <-> Ethereum bridge is a system that allows Doges to be moved from 
 
 ## Superblocks
 
-The Doge -> Eth side uses a new concept we named Superblocks. Read the [white paper](superblocks/superblocks-white-paper.pdf) 
+The Doge -> Eth side uses a new concept we named Superblocks. Read the [white paper](superblocks/superblocks-white-paper.pdf).
 
 
 ## Eth to Doge
 
 ![Design](./design-eth2doge.png)
+
+## Collateralized bridge
+
+We implemented a "collateralized" solution for the Eth -> Doge side. Here are the core concepts:
+
+* When a user wants to get doge tokens, she has to send the doges to a "Bridge operator". A bridge operator receives doges from users and holds them while they are locked. The smart contract mints doge tokens for the user.
+* When a user burns her doge tokens, a "bridge operator" is requested to send the doges back to the user.
+* Anyone can be a bridge operator.
+* "Bridge operators" deposit ether (collateral) on a smart contract. If they do anything with the doges but what is expected, they lose their eth deposit. 
+* Anyone can report to the smart contract a doge tx showing a "bridge operator" misbehaviour.
+* There is an oracle for eth/doge price.
 
 
 ## Actors
