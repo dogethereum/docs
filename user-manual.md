@@ -19,14 +19,14 @@ https://rinkeby.etherscan.io/token/0x.....
 In order to use the bridge you will need:
 
 * An Ethereum node running on rinkeby testnet with its blockchain up to date and rpc interface enabled. 
-```
+<pre>
 geth --rinkeby --syncmode=fast --cache=2048 --rpc --rpcapi="db,eth,net,web3,personal" console
-```
+</pre>
 * Some Rinkeby Eth to pay the network transaction fees. You can get some here https://faucet.rinkeby.io
 * A Dogecoin node running on mainnet with its blockchain up to date and rpc interface enabled.
-```
-Dogecoin-Qt -server -rpcuser=_yourDogeRpcUser_ -rpcpassword=_yourDogeRpcPassword_ 
-```
+<pre>
+Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
+</pre>
 * Some mainnet Doges to send to eth. You will be able to get them back (minus fees)
 * dogethereum tools
  * Get the prerequisites: https://github.com/dogethereum/dogethereum-tools#requirements
@@ -36,16 +36,16 @@ Dogecoin-Qt -server -rpcuser=_yourDogeRpcUser_ -rpcpassword=_yourDogeRpcPassword
 
 For a full command reference 
 * Visit https://github.com/dogethereum/dogethereum-tools#user-tools 
-* On the command line, cd to the the dogethereum-tools directory and type `node user/whatever-comand-you-want-to-use.js --help`
+* On the command line, cd to the the dogethereum-tools directory and type <pre>node user/<i>whatever-comand-you-want-to-use.js</i> --help</pre>
 
 
 ## Converting Dogecoin doges to Ethereum doge tokens.
 
 ### Send 10 doges to ethereum
 
-```
-node user/lock.js --dogeuser _yourDogeRpcUser_ --dogepassword _yourDogeRpcPassword_ --value 1000000000
-```
+<pre>
+node user/lock.js --dogeuser <i>yourDogeRpcUser</i> --dogepassword <i>yourDogeRpcPassword</i> --value 1000000000
+</pre>
 
 The minumum value to lock is 3 doges.
 
@@ -55,46 +55,46 @@ This will:
 * Print your private key. You need to use it later on to get the doge tokens. 
 
 Expected output:
-```
+<pre>
 Lock 10 doges.
 Connected to dogecoin node!
 Initiating lock... 
-Locking 10 doges to address _operatorDogeAddress_ using operator _0xoperatorPublicKeyHash_
-Sent doge tx _0x..._
-User private key : _0xYourPrivateKey_
-User eth address : _0xYourEthAddress_
+Locking 10 doges to address <i>operatorDogeAddress</i> using operator <i>0xoperatorPublicKeyHash</i>
+Sent doge tx <i>0x...</i>
+User private key : <i>0xYourPrivateKey</i>
+User eth address : <i>0xYourEthAddress</i>
 Total locked 10 doges
 Lock Done.
-```
+</pre>
 
 ### Import your private key
 
 The doge tokens will be assigned to the ethereum address controlled by the private key that signed the 1st input of the dogecoin transaction.
 That is the private key that you obtained on the previous step.
 In order to use your doge tokens, you need import your private key to ethereum:
-```
-node user/import-doge-key-to-eth.js --privateKey _0xYourPrivateKey_
-```
+<pre>
+node user/import-doge-key-to-eth.js --privateKey <i>0xYourPrivateKey</i>
+</pre>
 Expected output:
-```
-Import doge key to eth _0xYourPrivateKey_, password <empty>, unlock true, unlock time <forever>.
-Imported key for address _0xYourEthAddress_
+<pre>
+Import doge key to eth <i>0xYourPrivateKey</i>, password <empty>, unlock true, unlock time <forever>.
+Imported key for address <i>0xYourEthAddress</i>
 Unlocked address for <forever> seconds.
 Import and unlock done.
-```
+</pre>
 
 ### Check you have received the tokens
 
 To check you have received the tokens (after ~20 minutes):
-```
-node user/print-balances.js --address _0xYourEthAddress_
-```
+<pre>
+node user/print-balances.js --address <i>0xYourEthAddress</i>
+</pre>
 Expected output:
-```
-Print eth and doge token balances for eth address _0xYourEthAddress_
+<pre>
+Print eth and doge token balances for eth address <i>0xYourEthAddress</i>
 Eth balance : 0 eth.
 Doge token balance : 8 doge tokens.
-```
+</pre>
 There are fees you have to pay for doing a lock.
 If you sent 10 doges you will receive 8 doge tokens.
 The fee is 2% of the locked amount, minimum 2 doges.
@@ -108,12 +108,12 @@ If you received tokens by locking doges, you may want to use them.
 The first thing is to make sure you have some eth balance on the address where you have the doge tokens (you probably don't) to pay eth tx fees.
 You can send some eth to that address using your preferred ethereum rinkeby wallet.
 In case you don't have one, you can use this command (the sender address should have some rinkeby eth) :
-```
-node user/transfer-eth.js --sender _0x..._ --receiver _0xYourEthAddress_ --value 10000000000000000
-```
+<pre>
+node user/transfer-eth.js --sender <i>0x...</i> --receiver <i>0xYourEthAddress</i> --value 10000000000000000
+</pre>
 Expected output:
-```
-Transfer 0.01 eth from _0x..._ to _0xYourEthAddress_
+<pre>
+Transfer 0.01 eth from <i>0x...</i> to <i>0xYourEthAddress</i>
 Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
 Receiver balance : 0 eth.
 Sending transaction...
@@ -123,15 +123,15 @@ Transaction included in a block.
 Sender balance : ... eth.
 Receiver balance : 0.01 eth.
 Transfer eth completed.
-```
+</pre>
 
 To transfer 0.01 doge tokens to another user:
-```
-node user/transfer-tokens.js --sender _0xYourEthAddress_ --receiver _0xDestinationEthAddress_ --value 1000000
-```
+<pre>
+node user/transfer-tokens.js --sender <i>0xYourEthAddress</i> --receiver <i>0xDestinationEthAddress</i> --value 1000000
+</pre>
 Expected output:
-```
-Transfer 0.01 doge tokens from _0xYourEthAddress_ to _0xDestinationEthAddress_
+<pre>
+Transfer 0.01 doge tokens from <i>0xYourEthAddress</i> to <i>0xDestinationEthAddress</i>
 Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
 Sender doge token balance : 8 doge tokens.
 Receiver doge token balance : 0 doge tokens.
@@ -139,7 +139,7 @@ Initiating transfer...
 Transfer done.
 Sender doge token balance : 7.99 doge tokens.
 Receiver doge token balance : 0.01 doge tokens.
-```
+</pre>
 
 If you received tokens from another user:
 You can use them in your preferred rinkeby wallet as any other ERC-20 token 
@@ -148,26 +148,26 @@ You can use them in your preferred rinkeby wallet as any other ERC-20 token
 ## Converting Ethereum doge tokens back to Dogecoin doges.
 
 To send 5 doge tokens back to doge:
-```
-node user/unlock.js --sender _0xYourEthAddress_ --receiver _yourDogeAddress_ --value 500000000
-```
+<pre>
+node user/unlock.js --sender <i>0xYourEthAddress</i> --receiver <i>yourDogeAddress</i> --value 500000000
+</pre>
 Expected output:
-```
-Unlock 5 doge tokens from _0xYourEthAddress_ to _yourDogeAddress_.
+<pre>
+Unlock 5 doge tokens from <i>0xYourEthAddress</i> to <i>yourDogeAddress</i>.
 Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
 Sender doge token balance : 8 doge tokens.
 Initiating unlock... 
-Unlocking 5 doge tokens using operator _0x..._
-Total unlocked 5 doge tokens from _0xYourEthAddress_
+Unlocking 5 doge tokens using operator <i>0x...</i>
+Total unlocked 5 doge tokens from <i>0xYourEthAddress</i>
 Unlock done.
 Sender doge token balance : 3 doge tokens.
-```
+</pre>
 
 The minumum value to unlock is 3 doge tokens.
 There are fees you have to pay for doing an unlock.
 If you sent 5 doge tokens you will receive 4 doges.
 The fee is 1% of the unlocked amount, minimum 1 doge.
 
-After ~2 minutes you will receive a doge tx to `_yourDogeAddress_`.
+After ~2 minutes you will receive a doge tx to <i>yourDogeAddress</i>.
 
 You can check you received the doges using your Dogecoin wallet or https://dogechain.info
