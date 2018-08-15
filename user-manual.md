@@ -28,9 +28,9 @@ geth --rinkeby --syncmode=fast --cache=2048 --rpc --rpcapi="db,eth,net,web3,pers
 Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
 </pre>
 * Some mainnet Doges to send to eth. You will be able to get them back (minus fees)
-* dogethereum tools
- * Get the prerequisites: https://github.com/dogethereum/dogethereum-tools#requirements
- * Follow the instructions here: https://github.com/dogethereum/dogethereum-tools#installation
+* Install dogethereum tools
+  * Get the prerequisites: https://github.com/dogethereum/dogethereum-tools#requirements
+  * Follow the installation instructions: https://github.com/dogethereum/dogethereum-tools#installation
 
 ## Reference
 
