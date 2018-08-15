@@ -77,7 +77,7 @@ node user/import-doge-key-to-eth.js --privateKey <i>0xYourPrivateKey</i>
 </pre>
 Expected output:
 <pre>
-Import doge key to eth <i>0xYourPrivateKey</i>, password <empty>, unlock true, unlock time <forever>.
+Import doge key to eth <i>0xYourPrivateKey</i>, password "empty", unlock true, unlock time "forever".
 Imported key for address <i>0xYourEthAddress</i>
 Unlocked address for <forever> seconds.
 Import and unlock done.
@@ -171,3 +171,5 @@ The fee is 1% of the unlocked amount, minimum 1 doge.
 After ~2 minutes you will receive a doge tx to <i>yourDogeAddress</i>.
 
 You can check you received the doges using your Dogecoin wallet or https://dogechain.info
+
+Congratulations! You converted doge tokens to doges!
