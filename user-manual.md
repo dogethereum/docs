@@ -37,7 +37,7 @@ Before you start go to the dogethereum tools directory:
 cd dogethereum-tools
 ```
 
-### Send 10 doges to ethereum
+**Send 10 doges to ethereum**
 
 <pre>
 node user/lock.js --dogeuser <i>yourDogeRpcUser</i> --dogepassword <i>yourDogeRpcPassword</i> --value 1000000000
@@ -63,7 +63,7 @@ Total locked 10 doges
 Lock Done.
 </pre>
 
-### Import your private key
+**Import your private key**
 
 The doge tokens will be assigned to the ethereum address controlled by the private key that signed the 1st input of the dogecoin transaction.
 That is the private key that you obtained on the previous step.
@@ -72,7 +72,7 @@ In order to use your doge tokens, you need import your private key to ethereum:
 node user/import-doge-key-to-eth.js --privateKey <i>0xYourPrivateKey</i>
 </pre>
 
-### Check you have received the tokens
+**Check you have received the tokens**
 
 To check you have received the tokens (after ~20 minutes):
 <pre>
