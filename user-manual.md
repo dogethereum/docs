@@ -30,14 +30,12 @@ Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcP
 * Some mainnet Doges to send to eth. You will be able to get them back (minus fees)
 * Install [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools) : See [prerequisites](https://github.com/dogethereum/dogethereum-tools#requirements) and [installation instructions](https://github.com/dogethereum/dogethereum-tools#installation).
 
-## Reference
-
-For a full command reference 
-* Visit [Dogethereum tools user tools reference](https://github.com/dogethereum/dogethereum-tools#user-tools) 
-* On the command line, cd to the the dogethereum-tools directory and type <pre>node user/<i>whatever-comand-you-want-to-use.js</i> --help</pre>
-
-
 ## Converting Dogecoin doges to Ethereum doge tokens.
+
+Before you start go to the dogethereum tools directory: 
+```
+cd dogethereum-tools
+```
 
 ### Send 10 doges to ethereum
 
@@ -124,3 +122,8 @@ After ~2 minutes you will receive a doge tx to <i>yourDogeAddress</i>.
 You can check you received the doges using your Dogecoin wallet or https://dogechain.info
 
 Congratulations! You converted doge tokens to doges!
+
+## Dogethereum tools reference documentation
+For a full command reference:
+* See [User tools reference](https://github.com/dogethereum/dogethereum-tools#user-tools).
+* On the command line: <pre>node user/<i>whatever-comand-you-want-to-use.js</i> --help</pre>
