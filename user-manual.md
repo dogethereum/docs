@@ -75,13 +75,6 @@ In order to use your doge tokens, you need import your private key to ethereum:
 <pre>
 node user/import-doge-key-to-eth.js --privateKey <i>0xYourPrivateKey</i>
 </pre>
-Expected output:
-<pre>
-Import doge key to eth <i>0xYourPrivateKey</i>, password "empty", unlock true, unlock time "forever".
-Imported key for address <i>0xYourEthAddress</i>
-Unlocked address for <forever> seconds.
-Import and unlock done.
-</pre>
 
 ### Check you have received the tokens
 
@@ -89,12 +82,7 @@ To check you have received the tokens (after ~20 minutes):
 <pre>
 node user/print-balances.js --address <i>0xYourEthAddress</i>
 </pre>
-Expected output:
-<pre>
-Print eth and doge token balances for eth address <i>0xYourEthAddress</i>
-Eth balance : 0 eth.
-Doge token balance : 8 doge tokens.
-</pre>
+
 There are fees you have to pay for doing a lock.
 If you sent 10 doges you will receive 8 doge tokens.
 The fee is 2% of the locked amount, minimum 2 doges.
@@ -111,34 +99,10 @@ In case you don't have one, you can use this command (the sender address should 
 <pre>
 node user/transfer-eth.js --sender <i>0x...</i> --receiver <i>0xYourEthAddress</i> --value 10000000000000000
 </pre>
-Expected output:
-<pre>
-Transfer 0.01 eth from <i>0x...</i> to <i>0xYourEthAddress</i>
-Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
-Receiver balance : 0 eth.
-Sending transaction...
-Transaction sent.
-Waiting transaction to be included in a block...
-Transaction included in a block.
-Sender balance : ... eth.
-Receiver balance : 0.01 eth.
-Transfer eth completed.
-</pre>
 
 To transfer 0.01 doge tokens to another user:
 <pre>
 node user/transfer-tokens.js --sender <i>0xYourEthAddress</i> --receiver <i>0xDestinationEthAddress</i> --value 1000000
-</pre>
-Expected output:
-<pre>
-Transfer 0.01 doge tokens from <i>0xYourEthAddress</i> to <i>0xDestinationEthAddress</i>
-Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
-Sender doge token balance : 8 doge tokens.
-Receiver doge token balance : 0 doge tokens.
-Initiating transfer... 
-Transfer done.
-Sender doge token balance : 7.99 doge tokens.
-Receiver doge token balance : 0.01 doge tokens.
 </pre>
 
 If you received tokens from another user:
@@ -150,17 +114,6 @@ You can use them in your preferred rinkeby wallet as any other ERC-20 token
 To send 5 doge tokens back to doge:
 <pre>
 node user/unlock.js --sender <i>0xYourEthAddress</i> --receiver <i>yourDogeAddress</i> --value 500000000
-</pre>
-Expected output:
-<pre>
-Unlock 5 doge tokens from <i>0xYourEthAddress</i> to <i>yourDogeAddress</i>.
-Sender eth balance : ... eth. Please, make sure that is enough to pay for the tx fee.
-Sender doge token balance : 8 doge tokens.
-Initiating unlock... 
-Unlocking 5 doge tokens using operator <i>0x...</i>
-Total unlocked 5 doge tokens from <i>0xYourEthAddress</i>
-Unlock done.
-Sender doge token balance : 3 doge tokens.
 </pre>
 
 The minumum value to unlock is 3 doge tokens.
