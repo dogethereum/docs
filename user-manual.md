@@ -59,7 +59,7 @@ Expected output:
 Lock 10 doges.
 Connected to dogecoin node!
 Initiating lock... 
-Locking 10 doges to address <i>operatorDogeAddress</i> using operator <i>0xoperatorPublicKeyHash</i>
+Locking 10 doges to address <i>OperatorDogeAddress</i> using operator <i>0xoperatorPublicKeyHash</i>
 Sent doge tx <i>0x...</i>
 User private key : <i>0xYourPrivateKey</i>
 User eth address : <i>0xYourEthAddress</i>
