@@ -12,7 +12,7 @@ A "user" of the bridge can do the following operations:
 The "alpha" bridge uses Dogecoin mainnet and Ethereum Rinkeby testnet.
 
 The doge token is deployed at 
-https://rinkeby.etherscan.io/token/0x.....
+https://rinkeby.etherscan.io/token/0x... (to be published soon)
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ geth --rinkeby --syncmode=fast --cache=2048 --rpc --rpcapi="db,eth,net,web3,pers
 <pre>
 Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
 </pre>
-* Some mainnet Doges to send to eth. You can get some on [this faucet](https://freedoge.co.in) or [this other faucet](https://coinpot.co).
+* Some mainnet Doges on your Dogecoin-Qt wallet. You can get some on [this faucet](https://freedoge.co.in) or [this other faucet](https://coinpot.co).
 * Install [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools) : See [prerequisites](https://github.com/dogethereum/dogethereum-tools#requirements) and [installation instructions](https://github.com/dogethereum/dogethereum-tools#installation).
 
 ## Converting Dogecoin doges to Ethereum doge tokens.
