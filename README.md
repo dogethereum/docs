@@ -42,7 +42,7 @@ This is the list of external actors to the system and what they can do.
   * Transfer doge tokens (Eth -> Eth).
   * Unlock (Eth -> Doge).
 * Operator
-  * Register themselve as operator.
+  * Register as operator.
   * Add/Remove Eth collateral deposit.
   * Store locked doges.
   * Create, sign & broadcast doge unlock tx.
