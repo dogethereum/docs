@@ -11,8 +11,7 @@ A "user" of the bridge can do the following operations:
 
 The "alpha" bridge uses Dogecoin mainnet and Ethereum Rinkeby testnet.
 
-The doge token is deployed at 
-https://rinkeby.etherscan.io/token/0x... (to be published soon)
+The doge token is deployed at address [0x54fa0b6da406639c0fa1b000aec8eae1834f4b8a](https://rinkeby.etherscan.io/token/0x54fa0b6da406639c0fa1b000aec8eae1834f4b8a)
 
 ## Prerequisites
 
