@@ -22,7 +22,7 @@ In order to use the bridge you will need:
 geth --rinkeby --syncmode=fast --cache=2048 --rpc --rpcapi="db,eth,net,web3,personal" console
 </pre>
 * Some Rinkeby Eth to pay the network transaction fees. You can get some on the [faucet](https://faucet.rinkeby.io).
-* A Dogecoin node running on mainnet with its blockchain up to date and rpc interface enabled.
+* A Dogecoin core node running on mainnet with its blockchain up to date and rpc interface enabled (Other doge wallets won't work).
 <pre>
 Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
 </pre>
