@@ -1,7 +1,7 @@
 # Dogecoin <-> Ethereum bridge docs
 
 The Dogecoin <-> Ethereum bridge is a system that allows Doges to be moved from the Dogecoin blockchain to the Ethereum blockchain and back.
-Read the [intro for non-technical users](https://jrn.me.uk//dogecoin/doge-ethereum-bridge/) by Ross Nicoll.
+Read the [intro for non-technical users](https://jrn.me.uk//dogecoin/doge-ethereum-bridge/) by [Ross Nicoll](https://github.com/rnicoll).
 
 ## Main subprojects
 * [Dogethereum contracts](https://github.com/dogethereum/dogethereum-contracts): Ethereum contracts.
