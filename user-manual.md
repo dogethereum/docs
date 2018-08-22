@@ -24,7 +24,7 @@ geth --rinkeby --syncmode=fast --cache=2048 --rpc --rpcapi="db,eth,net,web3,pers
 * Some Rinkeby Eth to pay the network transaction fees. You can get some on the [faucet](https://faucet.rinkeby.io).
 * A Dogecoin core node running on mainnet with its blockchain up to date and rpc interface enabled (Other doge wallets won't work).
 <pre>
-Dogecoin-Qt -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
+<i>dogecoindOrDogecoinQtCommand</i> -server -rpcuser=<i>yourDogeRpcUser</i> -rpcpassword=<i>yourDogeRpcPassword</i> 
 </pre>
 * Some mainnet Doges on your Dogecoin-Qt wallet. You can get some on [this faucet](https://freedoge.co.in) or [this other faucet](https://coinpot.co).
 * Install [Dogethereum tools](https://github.com/dogethereum/dogethereum-tools) : See [prerequisites](https://github.com/dogethereum/dogethereum-tools#requirements) and [installation instructions](https://github.com/dogethereum/dogethereum-tools#installation).
