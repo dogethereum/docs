@@ -125,4 +125,4 @@ Congratulations! You converted doge tokens to doges!
 ## Dogethereum tools reference documentation
 For a full command reference:
 * See [User tools reference](https://github.com/dogethereum/dogethereum-tools#user-tools).
-* On the command line: <pre>node user/<i>whatever-comand-you-want-to-use.js</i> --help</pre>
+* On the command line: <pre>node user/<i>whatever-command-you-want-to-use.js</i> --help</pre>
