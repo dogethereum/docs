@@ -59,12 +59,12 @@ This is the list of external actors to the system and what they can do.
 ## Workflows
 * New Superblock
   * There is a new block on the doge blockchain, then another one, then another one...
-  * Once per hour Superblock Submitters create a new Superblock containing the newly created blocks and send a Superblock summary to [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeClaimManager.sol)
+  * Once per hour Superblock Submitters create a new Superblock containing the newly created blocks and send a Superblock summary to [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol)
   * Superblock Challengers will challenge the superblock if they find it invalid. They will request the list of block hashes, the block headers, etc. Superblock Submitters should send that information which is validated onchain by the contract.
-  * A Superblock Challenger might challenge one of the block's scrypt hashes. In that case [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeClaimManager.sol) uses Truebit's [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive) to check its correctness.
+  * A Superblock Challenger might challenge one of the block's scrypt hashes. In that case [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol) uses Truebit's [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive) to check its correctness.
   * If any information provided by the Superblock Submitter is proven wrong or if it fails to answer, the Superblock is discarded.
-  * If no challenge to the Superblock was done after a contest period (or if the challenges failed) the superblock is considered to be "approved". [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeClaimManager.sol) contract notifies [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeSuperblocks.sol) which adds the Superblock to its Superblock chain.
-  * Note: [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeSuperblocks.sol) uses a checkpoint instead of starting from dogecoin blockchain genesis.
+  * If no challenge to the Superblock was done after a contest period (or if the challenges failed) the superblock is considered to be "approved". [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol) contract notifies [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) which adds the Superblock to its Superblock chain.
+  * Note: [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) uses a checkpoint instead of starting from dogecoin blockchain genesis.
  
 
 * Sending dogecoins to ethereum
@@ -73,19 +73,19 @@ This is the list of external actors to the system and what they can do.
   * The doge tx is included in a doge block and several doge blocks are mined on top of it.
   * Once the doge block is included in an approved superblock, the lock tx is ready to be relayed to the eth network.
   * A [doge altruistic doge lock tx submitter](https://github.com/dogethereum/dogethereum-agents)  finds the doge lock tx (In the future there will be a tool for users to relay their own txs).
-  * The [doge altruistic doge lock tx submitter](https://github.com/dogethereum/dogethereum-agents) sends an eth tx to [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeSuperblocks.sol) containing: the doge lock tx, a partial merkle tree proving the doge lock tx was included in a doge block, the doge block header that contains the doge lock tx, another partial merkle tree proving the block was included in a superblock and the superblock id that contains the block.
-  * [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/contracts/DogeSuperblocks.sol) checks the consistency of the supplied information and relays the doge lock tx to [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol).
-  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) checks the doge lock tx actually sends funds to the doge address of a registered operator.
-  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) mints N tokens and assigns them to the User. Dogecoin lock txs don't specify a destination eth address. Dogetokens will be assigned to the eth address controlled by the private key that signed the dogecoin lock tx.
+  * The [doge altruistic doge lock tx submitter](https://github.com/dogethereum/dogethereum-agents) sends an eth tx to [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) containing: the doge lock tx, a partial merkle tree proving the doge lock tx was included in a doge block, the doge block header that contains the doge lock tx, another partial merkle tree proving the block was included in a superblock and the superblock id that contains the block.
+  * [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) checks the consistency of the supplied information and relays the doge lock tx to [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol).
+  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol) checks the doge lock tx actually sends funds to the doge address of a registered operator.
+  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol) mints N tokens and assigns them to the User. Dogecoin lock txs don't specify a destination eth address. Dogetokens will be assigned to the eth address controlled by the private key that signed the dogecoin lock tx.
 
 
 * Sending doge tokens back to dogecoin
   * User selects an operator (any operator who has the desired amount of locked doges).
-  * User sends an eth tx to the [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) invoking the `doUnlock` function. Destination doge address, amount and operator id are supplied as parameters.
-  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) selects the UTXOs to spend, defines the doge tx fee, change and operator fee.
+  * User sends an eth tx to the [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol) invoking the `doUnlock` function. Destination doge address, amount and operator id are supplied as parameters.
+  * [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol) selects the UTXOs to spend, defines the doge tx fee, change and operator fee.
   * The [operator agent](https://github.com/dogethereum/dogethereum-agents) notices the unlock request. It creates, signs & broadcasts a doge unlock tx. 
   * The user receives the unlocked doges.
-  * The operator waits the doge tx to be confirmed and included in a superblock and then relays the doge unlock tx to the eth network, so change can be used by [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/contracts/token/DogeToken.sol) for future unlocks.
+  * The operator waits the doge tx to be confirmed and included in a superblock and then relays the doge unlock tx to the eth network, so change can be used by [DogeToken contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/token/DogeToken.sol) for future unlocks.
 
 ## Incentives
 
