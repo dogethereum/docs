@@ -36,29 +36,29 @@ Before you start go to the dogethereum tools directory:
 cd dogethereum-tools
 ```
 
-**Send 6 doges to ethereum**
+**Send 8 doges to ethereum**
 
 <pre>
-node user/lock.js --dogeuser <i>yourDogeRpcUser</i> --dogepassword <i>yourDogeRpcPassword</i> --value 600000000
+node user/lock.js --dogeuser <i>yourDogeRpcUser</i> --dogepassword <i>yourDogeRpcPassword</i> --value 800000000
 </pre>
 
 The minumum value to lock is 3 doges.
 
 This will:
-* Select an operator that is available to receive 6 doges.
-* Create, sign and broadcast a doge tx sending 6 doges to the operator.
+* Select an operator that is available to receive 8 doges.
+* Create, sign and broadcast a doge tx sending 8 doges to the operator.
 * Print your private key. You need to use it later on to get the doge tokens. 
 
 Expected output:
 <pre>
-Lock 6 doges.
+Lock 8 doges.
 Connected to dogecoin node!
 Initiating lock... 
-Locking 6 doges to address <i>OperatorDogeAddress</i> using operator <i>0xoperatorPublicKeyHash</i>
+Locking 8 doges to address <i>OperatorDogeAddress</i> using operator <i>0xoperatorPublicKeyHash</i>
 Sent doge tx <i>...</i>
 User private key : <i>0xYourPrivateKey</i>
 User eth address : <i>0xYourEthAddress</i>
-Total locked 6 doges.
+Total locked 8 doges.
 Lock Done.
 </pre>
 
@@ -79,7 +79,7 @@ node user/print-balances.js --address <i>0xYourEthAddress</i>
 </pre>
 
 There are fees you have to pay for doing a lock.
-If you sent 6 doges, you will receive 4 doge tokens because the bridge fee is 2% of the locked amount, minimum 2 doges.
+If you sent 8 doges, you will receive 4 doge tokens because the bridge fee is 2% of the locked amount, minimum 2 doges.
 On top of that, you will be charged ~1 doge to pay the doge tx fee.
 
 Congratulations! You converted doges to doge tokens!
