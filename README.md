@@ -99,7 +99,7 @@ Some operations require gas to be spent or eth deposit to be frozen. Here are th
 
 ## Assumptions
 * Incentives will guarantee that there is always at least one honest Superblock Submitter and one honest Superblock Challenger online.
-* There are no huge regorgs (i.e. 100+ block) in Doge nor in Eth blockchains
+* There are no huge reorgs (i.e. 100+ block) in Doge nor in Eth blockchains
 
 ## Team
 
