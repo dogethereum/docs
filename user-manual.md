@@ -79,7 +79,7 @@ node user/print-balances.js --address <i>0xYourEthAddress</i>
 </pre>
 
 There are fees you have to pay for doing a lock.
-If you sent 6 doges, you will receive 4 doge tokens because the bridge fee (for operators and superblock submitters) is 2% of the locked amount, minimum 2 doges.
+If you sent 6 doges, you will receive 4 doge tokens because the bridge fee is 2% of the locked amount, minimum 2 doges.
 On top of that, you will be charged ~1 doge to pay the doge tx fee.
 
 Congratulations! You converted doges to doge tokens!
@@ -113,8 +113,9 @@ node user/unlock.js --sender <i>0xYourEthAddress</i> --receiver <i>yourDogeAddre
 
 The minumum value to unlock is 3 doge tokens.
 There are fees you have to pay for doing an unlock.
-If you sent 5 doge tokens you will receive 4 doges.
 The bridge fee is 1% of the unlocked amount, minimum 1 doge.
+On top of that ~1.5 doge will be deducted to pay the doge tx fee.
+If you sent 5 doge tokens you will receive ~2.5 doges.
 
 After ~2 minutes you will receive a doge tx to <i>yourDogeAddress</i>.
 
