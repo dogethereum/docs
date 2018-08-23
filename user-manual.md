@@ -79,7 +79,7 @@ node user/print-balances.js --address <i>0xYourEthAddress</i>
 </pre>
 
 There are fees you have to pay for doing a lock.
-If you sent 8 doges, you will receive 4 doge tokens because the bridge fee is 2% of the locked amount, minimum 2 doges.
+If you sent 8 doges, you will receive 6 doge tokens because the bridge fee is 2% of the locked amount, minimum 2 doges.
 On top of that, you will be charged ~1 doge to pay the doge tx fee.
 
 Congratulations! You converted doges to doge tokens!
