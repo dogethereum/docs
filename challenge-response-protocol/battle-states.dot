@@ -1,0 +1,46 @@
+digraph ChallengeStates {
+
+  // All edge labels refer to DogeBattleManager functions
+  // All node names refer to ChallengeState enum members
+  // A legend is best provided as a separate file
+
+  // The layout in Graphviz is sensitive to the order in which these nodes are defined.
+  {
+    node []
+    Challenged [label="Battle for claim starts"]
+    QueryMerkleRootHashes [label="The challenger asked for the block hashes\n in the superblock"]
+    RespondMerkleRootHashes [label="The submitter responded the block hashes"]
+    VerifyScryptHash [label="The submitter responded the block header"]
+    PendingVerification [label="All block headers are valid\n Final superblock integrity verification pending"]
+    QueryBlockHeader [label="The challenger asked for a particular block header"]
+    RespondBlockHeader [label="The submitter and challenger\n fully verified the block header"]
+  }
+
+  {
+    node [shape=rectangle]
+    RequestScryptVerification [label="The challenger asked verification of\n the PoW scrypt hash of the header"]
+    PendingScryptVerification [label="The scrypt hash verification\n occurs in another contract"]
+  }
+
+  {
+    node []
+    SuperblockFailed [label="The battle ends and\n the submitter loses"]
+    Deleted [label="Result\n notification", shape=doublecircle]
+  }
+
+
+  Challenged -> QueryMerkleRootHashes [label="C: queryMerkleRootHashes"]
+  QueryMerkleRootHashes -> RespondMerkleRootHashes [label="S: respondMerkleRootHashes"]
+  VerifyScryptHash -> PendingVerification [label="C: queryBlockHeader\n Scrypt hash challenge is skipped\n No remaining block headers"]
+  VerifyScryptHash -> QueryBlockHeader [label="C: queryBlockHeader\n Scrypt hash challenge is skipped\n Some block headers remain"]
+  RespondMerkleRootHashes -> QueryBlockHeader [label="C: queryBlockHeader"]
+  RespondBlockHeader -> QueryBlockHeader [label="C: queryBlockHeader\n "]
+  QueryBlockHeader -> VerifyScryptHash [label="S: respondBlockHeader"]
+  VerifyScryptHash -> RequestScryptVerification [label="C: requestScryptHashValidation"]
+  RequestScryptVerification -> PendingScryptVerification [label="H: scryptSubmitted"]
+  PendingScryptVerification -> PendingVerification [label="H: scryptVerified\n No remaining block headers"]
+  PendingScryptVerification -> RespondBlockHeader [label="H: scryptVerified\n Some block headers remain"]
+  PendingScryptVerification -> SuperblockFailed [label="H: scryptFailed"]
+  SuperblockFailed -> Deleted [label="*: verifySuperblock\n The submitter is convicted"]
+  PendingVerification -> Deleted [label="*: verifySuperblock\n The challenger or the submitter is convicted"]
+}

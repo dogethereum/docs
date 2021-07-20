@@ -1,0 +1,29 @@
+digraph SuperblockClaims {
+
+  // All edge labels refer to SuperblockClaims functions
+  // All nodes map loosely to superblock status enum members found in DogeSuperblocks
+
+  {
+    node []
+    NewSuperblock [label="New superblock"]
+    ClaimSubmitted [label="New claim\n Superblock claim in good standing but not approved"]
+    BattleOverClaim [label="Claim is being challenged"]
+    GoodSuperblock [label="Claim is in good standing"]
+    SemiApprovedClaim [label="Claim is part of a superblockchain\n that was challenged at least once\n but remains in good standing"]
+    ApprovedClaim [label="Claim is approved and the superblock\n is considered part of the canonical superblockchain"]
+    InvalidatedSuperblock [label="Superblock is invalid"]
+  }
+
+
+
+  NewSuperblock -> ClaimSubmitted [label="S: proposeSuperblock"]
+  ClaimSubmitted -> BattleOverClaim [label="C: challengeSuperblock"]
+  BattleOverClaim -> InvalidatedSuperblock [label="B: sessionDecided\n The submitter lost the battle"]
+  BattleOverClaim -> GoodSuperblock [label="B: sessionDecided\n The submitter won the battle"]
+  GoodSuperblock -> SemiApprovedClaim [label="*: checkClaimFinished\n The claim is mature"]
+  GoodSuperblock -> BattleOverClaim [label="C: challengeSuperblock"]
+  ClaimSubmitted -> ApprovedClaim [label="*: checkClaimFinished\n The claim is mature\n The parent superblock is canonical"]
+  ClaimSubmitted -> SemiApprovedClaim [label="*: checkClaimFinished\n The claim is mature\n The parent superblock is not approved yet"]
+  SemiApprovedClaim -> ApprovedClaim [label="*: confirmClaim\n The parent superblock is canonical"]
+  SemiApprovedClaim -> InvalidatedSuperblock [label="*: rejectClaim\n The claim is not part of the canonical superblockchain"]
+}

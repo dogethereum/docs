@@ -1,0 +1,6 @@
+
+digraph Legend {
+  "Battle running. Timeout possible.";
+  "Battle paused. No timeouts." [shape=rectangle];
+  "Battle finished." [shape=doublecircle];
+}
