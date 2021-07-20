@@ -25,7 +25,9 @@ Actors:
 
 Here we consider `B` as an actor even though it is actually a contract. Normally, `B` is invoked by one of `S` or `C` but we don't distinguish them here.
 
-A claim can be challenged any number of times but only one battle can occur at a time. See the [battle protocol](#battle-protocol) section to learn more about it.
+A claim can be challenged any number of times but only one battle can occur at a time. See the [battle protocol](#battle-protocol) section to learn more about how challenges resolve.
+
+Once a claim has matured, i.e. enough time has passed since it was submitted, it can be checked to decide whether to confirm it as part of the canonical superblockchain or to give it a partial approval if it is part of a contested superblockchain.
 
 # Battle protocol
 
