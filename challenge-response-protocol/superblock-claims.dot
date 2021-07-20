@@ -19,11 +19,11 @@ digraph SuperblockClaims {
   NewSuperblock -> ClaimSubmitted [label="S: proposeSuperblock"]
   ClaimSubmitted -> BattleOverClaim [label="C: challengeSuperblock"]
   BattleOverClaim -> InvalidatedSuperblock [label="B: sessionDecided\n The submitter lost the battle"]
-  BattleOverClaim -> GoodSuperblock [label="B: sessionDecided\n The submitter won the battle"]
+  BattleOverClaim -> GoodSuperblock [label="B: sessionDecided\n The submitter won the battle\n No pending battles"]
   GoodSuperblock -> SemiApprovedClaim [label="*: checkClaimFinished\n The claim is mature"]
   GoodSuperblock -> BattleOverClaim [label="C: challengeSuperblock"]
   ClaimSubmitted -> ApprovedClaim [label="*: checkClaimFinished\n The claim is mature\n The parent superblock is canonical"]
   ClaimSubmitted -> SemiApprovedClaim [label="*: checkClaimFinished\n The claim is mature\n The parent superblock is not approved yet"]
   SemiApprovedClaim -> ApprovedClaim [label="*: confirmClaim\n The parent superblock is canonical"]
-  SemiApprovedClaim -> InvalidatedSuperblock [label="*: rejectClaim\n The claim is not part of the canonical superblockchain"]
+  SemiApprovedClaim -> InvalidatedSuperblock [label="*: rejectClaim\n The superblock is not part of the canonical superblockchain"]
 }
