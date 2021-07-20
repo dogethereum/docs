@@ -29,6 +29,8 @@ A claim can be challenged any number of times but only one battle can occur at a
 
 Once a claim has matured, i.e. enough time has passed since it was submitted, it can be checked to decide whether to confirm it as part of the canonical superblockchain or to give it a partial approval if it is part of a contested superblockchain.
 
+Funds staked in a claim are awarded to the submitter if the superblock is added to the canonical superblockchain. If the superblock is invalidated instead, the funds go to the challengers of the superblock.
+
 # Battle protocol
 
 In a battle there are only two participants: the superblock submitter and the challenger.
