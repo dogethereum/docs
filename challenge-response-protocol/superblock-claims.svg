@@ -86,8 +86,9 @@
 <title>BattleOverClaim&#45;&gt;GoodSuperblock</title>
 <path fill="none" stroke="black" d="M128.77,-387.51C121.22,-382.62 114.34,-376.43 109.89,-368.69 99.93,-351.35 96.97,-338.96 109.89,-323.69 124.55,-306.38 169.66,-296.65 216.58,-291.18"/>
 <polygon fill="black" stroke="black" points="217.05,-294.65 226.6,-290.08 216.28,-287.69 217.05,-294.65"/>
-<text text-anchor="middle" x="216.89" y="-349.99" font-family="Times,serif" font-size="14.00">B: sessionDecided</text>
-<text text-anchor="middle" x="216.89" y="-334.99" font-family="Times,serif" font-size="14.00"> The submitter won the battle</text>
+<text text-anchor="middle" x="216.89" y="-357.49" font-family="Times,serif" font-size="14.00">B: sessionDecided</text>
+<text text-anchor="middle" x="216.89" y="-342.49" font-family="Times,serif" font-size="14.00"> The submitter won the battle</text>
+<text text-anchor="middle" x="216.89" y="-327.49" font-family="Times,serif" font-size="14.00"> No pending battles</text>
 </g>
 <!-- InvalidatedSuperblock -->
 <g id="node7" class="node">
