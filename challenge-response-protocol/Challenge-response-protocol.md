@@ -54,7 +54,7 @@ Every transition here corresponds to a transaction sent successfully by either t
 
 Whenever one party advances the battle, it stakes an additional amount of ether from their deposit. This amount is meant to eventually pay for the gas cost of the transaction sent in response by the opponent. If the deposit were to lack sufficient funds, the transaction is reverted and the battle is left unmodified.
 
-Some nodes describe states where one of the parties can be timed out if they take too long to respond. In such cases, the opponent party wins by default.
+Some nodes describe states where one of the parties can be timed out if they take too long to respond. In such cases, the opponent party wins by default. Anyone can call the timeout function for a battle.
 
 
 # Scrypt claims
