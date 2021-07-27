@@ -59,11 +59,11 @@ This is the list of external actors to the system and what they can do.
 ## Workflows
 * New Superblock
   * There is a new block on the doge blockchain, then another one, then another one...
-  * Once per hour Superblock Submitters create a new Superblock containing the newly created blocks and send a Superblock summary to [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol)
+  * Once per hour Superblock Submitters create a new Superblock containing the newly created blocks and send a Superblock summary to [SuperblockClaims contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/SuperblockClaims.sol)
   * Superblock Challengers will challenge the superblock if they find it invalid. They will request the list of block hashes, the block headers, etc. Superblock Submitters should send that information which is validated onchain by the contract.
-  * A Superblock Challenger might challenge one of the block's scrypt hashes. In that case [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol) uses Truebit's [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive) to check its correctness.
+  * A Superblock Challenger might challenge one of the block's scrypt hashes. In that case [SuperblockClaims contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/SuperblockClaims.sol) uses Truebit's [Scrypt hash verification](https://github.com/dogethereum/scrypt-interactive) to check its correctness.
   * If any information provided by the Superblock Submitter is proven wrong or if it fails to answer, the Superblock is discarded.
-  * If no challenge to the Superblock was done after a contest period (or if the challenges failed) the superblock is considered to be "approved". [DogeClaimManager contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeClaimManager.sol) contract notifies [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) which adds the Superblock to its Superblock chain.
+  * If no challenge to the Superblock was done after a contest period (or if the challenges failed) the superblock is considered to be "approved". [SuperblockClaims contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/SuperblockClaims.sol) contract notifies [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) which adds the Superblock to its Superblock chain.
   * Note: [DogeSuperblocks contract](https://github.com/dogethereum/dogethereum-contracts/blob/master/contracts/DogeSuperblocks.sol) uses a checkpoint instead of starting from dogecoin blockchain genesis.
  
 
