@@ -107,6 +107,7 @@ Some operations require gas to be spent or eth deposit to be frozen. Here are th
 * [Catalina Juarros](https://github.com/cat-j)
 * [Pablo Yabo](https://github.com/pipaman)
 * [Oscar Guindzberg](https://github.com/oscarguindzberg)
+* [Sebastian Nale](https://github.com/scnale)
 
 ## License
 
