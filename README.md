@@ -113,3 +113,9 @@ Some operations require gas to be spent or eth deposit to be frozen. Here are th
 MIT License<br/>
 Copyright (c) 2021 Coinfabrik & Oscar Guindzberg<br/>
 [License](LICENSE)
+
+## Donations
+
+BTC: 37gWZJPmEjM8RdgjauLsDUgbkYPe5bRFttg<br/>
+ETH: 0xFc7E364035f52ecA68D71dcfb63D1E3769413d69<br/>
+DOGE: D5q6QoN51z1daFpkreNqpbVq6i6oP6S35m
